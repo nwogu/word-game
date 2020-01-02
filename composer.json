@@ -67,11 +67,11 @@
         ],
         "post-install-cmd": [
             "php artisan config:cache",
-            "php artisan migrate"
+            "php artisan migrate --force"
         ],
         "post-update-cmd": [
             "php artisan config:cache",
-            "php artisan migrate"
+            "php artisan migrate --force"
         ]
     }
 }
