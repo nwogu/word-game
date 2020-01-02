@@ -12,7 +12,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
-        "mironovdv/crossword": "dev-master",
+        "nwogu/crossword": "dev-master",
         "twilio/sdk": "^5.41"
     },
     "require-dev": {
@@ -66,9 +66,11 @@
             "@php artisan key:generate --ansi"
         ],
         "post-install-cmd": [
+            "php artisan config:cache",
             "php artisan migrate"
         ],
         "post-update-cmd": [
+            "php artisan config:cache",
             "php artisan migrate"
         ]
     }
