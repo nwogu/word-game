@@ -18,3 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/word-game', 'WordGameController');
+
+Route::get('/health-check', function () {
+    
+    $gamer = \App\Models\Gamer::first();
+
+    return response()->json($gamer);
+});
