@@ -2,9 +2,6 @@
 
 namespace App\Factories;
 
-use Crossword\Crossword;
-use Crossword\Generate\Generate;
-
 class PuzzleFactory
 {
     /**
@@ -42,14 +39,14 @@ class PuzzleFactory
      */
     protected function resolve()
     {
-        $crossWordGenerator = new Crossword(
+        $crossWordGenerator = new \Crossword\Crossword(
             self::GRID_LENGTH,
             self::GRID_LENGTH,
             $this->words
         );
 
         $crossWordGenerator->generate(
-            Generate::TYPE_RANDOM, true
+            \Crossword\Generate\Generate::TYPE_RANDOM, true
         );
 
         $crossword = $crossWordGenerator->toArray();
