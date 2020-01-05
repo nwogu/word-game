@@ -148,8 +148,12 @@ class GameActor extends Actor
         if (empty($words)) {
             $resolvedPuzzle = $puzzle;
         } else {
-            $puzzleResolver = new PuzzleResolver;
-            $resolvedPuzzle = $puzzleResolver->solve(0, count($words), $words, $puzzle);
+            $puzzleResolver = new PuzzleResolver(
+                $words, 
+                $question["crossword"], 
+                $question["grid"]
+            );
+            $resolvedPuzzle = $puzzleResolver->solve();
         }
         
         $resolvedPuzzle = join("\n", $resolvedPuzzle);

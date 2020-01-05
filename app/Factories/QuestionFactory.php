@@ -128,12 +128,14 @@ class QuestionFactory
             array_unique(array_merge([$answerable], $missings))
         );
 
-        $puzzle = PuzzleFactory::make($missings);
+        list($puzzle, $crossword, $grid) = PuzzleFactory::make($missings);
 
         return [
             "shuffled" => str_shuffle($answerable),
             "missings" => $missings,
-            "puzzle" => $puzzle
+            "puzzle" => $puzzle,
+            "crossword" => $crossword,
+            "grid" => $grid
         ];
     }
 

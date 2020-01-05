@@ -52,8 +52,8 @@ class PuzzleFactory
         $crossword = $crossWordGenerator->toArray();
         $grid = $this->convertToGrid($crossword);
 
-        $this->replaceGridWithFillers($grid, $filledGrid);
-        return $filledGrid;
+        $newgrid = $this->replaceGridWithFillers($grid, $filledGrid);
+        return [$filledGrid, $crossword, $newgrid];
     }
 
     /**
@@ -88,5 +88,6 @@ class PuzzleFactory
             }
             $filledGrid[] = implode("", $block);
         }
+        return $grid;
     }
 }
