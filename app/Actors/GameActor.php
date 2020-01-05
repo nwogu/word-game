@@ -141,7 +141,6 @@ class GameActor extends Actor
     {
         $question = $this->gamer->game->question;
         $words = $this->gamer->game->answer ?? [];
-        $words = array_map("strtoupper", $words);
 
         $puzzle = $question["puzzle"];
 
